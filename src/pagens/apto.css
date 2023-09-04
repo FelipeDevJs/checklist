@@ -42,3 +42,19 @@
     background: rgb(177, 177, 177);
     color: #fff;
 }
+
+.listckeck {
+    width: 30px;
+    /* background: red; */
+}
+.listtext {
+    width: 90px;
+     /* background: yellow;  */
+} 
+.listinfo {
+    width: 30px;
+     /* background: yellow;  */
+} 
+/* .tooltip {
+    position: absolute;
+} */

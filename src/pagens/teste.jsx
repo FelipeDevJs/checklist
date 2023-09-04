@@ -1,14 +1,19 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import { FaAngleDown } from "react-icons/fa";
+import { FaAngleDown, FaInfoCircle } from "react-icons/fa";
 import ImgVitalle from "../assets/vitalle_pq.png.webp";
 import "../pagens/apto.css";
 
 function CollapsibleButton({ buttonText, hiddenText }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
 
   const toggleCollapsible = () => {
     setIsCollapsed(!isCollapsed);
+  };
+
+  const toggleTooltip = () => {
+    setShowTooltip(!showTooltip);
   };
 
   return (
@@ -20,13 +25,30 @@ function CollapsibleButton({ buttonText, hiddenText }) {
         {buttonText}
         <FaAngleDown />
       </div>
+      
       {isCollapsed && (
         <div className="content">
           <ul>
             {hiddenText.map((text, index) => (
               <li key={index}>
-                <input type="checkbox" />
-                <p>{text}</p>
+                <div className="listckeck">
+                  <input type="checkbox" />
+                </div>
+                <div className="listtext">
+                  <p>{text}</p>
+                </div>
+                <div
+                    className="listinfo"
+                    onMouseEnter={toggleTooltip}
+                    onMouseLeave={toggleTooltip}
+                >
+                    <FaInfoCircle />
+                    {showTooltip && (
+                        <div className="tooltip">
+                            Texto de aviso
+                        </div>
+                    )}
+                </div>
               </li>
             ))}
           </ul>
@@ -52,25 +74,25 @@ function AptoId() {
           <CollapsibleButton
             buttonText="Banheiro"
             hiddenText={[
-                "Texto do item 1", 
-                "Texto do item 2", 
-                "Texto do item 3"
+              "Vaso",
+              "Pia",
+              "Torneira"
             ]}
           />
           <CollapsibleButton
             buttonText="Sala"
             hiddenText={[
-                "Texto do item 1", 
-                "Texto do item 2", 
-                "Texto do item 3"
+              "Paredes",
+              "Rodapé",
+              "Piso"
             ]}
           />
           <CollapsibleButton
             buttonText="Quarto"
             hiddenText={[
-                "Texto do item 1", 
-                "Texto do item 2", 
-                "Texto do item 3"
+              "Paredes",
+              "Rodapé",
+              "Piso"
             ]}
           />
         </div>
