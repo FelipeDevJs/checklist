@@ -1,0 +1,44 @@
+.local {
+    text-align: center;
+}
+.aptocheck {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.aptobox {
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+    /* background: gray; */
+}
+.collapsible{
+    width: 150px;
+    background: rgb(144, 144, 144);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 2px;
+}
+/*
+.content {
+     background: yellow; 
+}
+*/
+.content ul li {
+    /* background: orange; */
+    margin: 4px;
+    text-align: center;
+    padding: 5px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10px;
+    background: rgb(177, 177, 177);
+    color: #fff;
+}
