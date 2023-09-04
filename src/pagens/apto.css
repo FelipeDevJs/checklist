@@ -23,8 +23,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* width: 150px;
-    background: rgb(144, 144, 144);
+    width: 300px;
+    /*background: rgb(144, 144, 144);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -59,13 +59,22 @@
 }
 
 .listckeck {
-    width: 30px;
+    width: auto;
     /* background: red; */
 }
-.listtext {
+.listtext, .listinfo {
     width: 90px;
-     /* background: yellow;  */
+    /* background: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: center; 
 } 
+.listckeck div {
+    display: flex;
+}
+.listckeck div input {
+    margin: 0px 5px;
+}
 .listinfo {
     width: 30px;
 

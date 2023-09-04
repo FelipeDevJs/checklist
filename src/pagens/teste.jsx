@@ -6,16 +6,28 @@ import "../pagens/apto.css";
 
 function CollapsibleButton({ buttonText, hiddenText }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
-  // const [showTooltip, setShowTooltip] = useState(false);
   const [activeItemIndex, setActiveItemIndex] = useState(0);
+  const [campoAberto, setCampoAberto] = useState(false);
+  const [checkboxSim, setCheckboxSim] = useState(true);
+  const [checkboxNao, setCheckboxNao] = useState(false);
 
   const toggleCollapsible = () => {
     setIsCollapsed(!isCollapsed);
   };
 
-  // const toggleTooltip = () => {
-  //   setShowTooltip(!showTooltip);
-  // };
+  const handleClick = () => {
+    setCampoAberto(!campoAberto);
+  };
+
+  const handleClickSim = () =>{
+    setCheckboxSim(!checkboxSim)
+    setCheckboxNao(!checkboxNao)
+  }
+
+  const handleClickNao = () => {
+    setCheckboxNao(!checkboxNao)
+    setCheckboxSim(!checkboxSim)
+  }
 
   const onMouseEnter = (index) => {
     setActiveItemIndex(index)
@@ -39,11 +51,40 @@ function CollapsibleButton({ buttonText, hiddenText }) {
           <ul>
             {hiddenText.map((text, index) => (
               <li key={index}>
-                <div className="listckeck">
-                  <input type="checkbox" />
-                </div>
                 <div className="listtext">
                   <p>{text}</p>
+                </div>
+                <div className="listckeck">
+                  <p>Está Okay?</p>
+                  <div>
+                    <p>Sim</p>
+                    <input 
+                      type="checkbox" 
+                      name="sim" 
+                      checked={checkboxSim}
+                      onChange={handleClickSim}
+                    />
+                    <p>Não</p>
+                    <input 
+                      type="checkbox" 
+                      name="nao" 
+                      checked={checkboxNao}
+                      onChange={handleClickNao}
+                      onClick={handleClick}
+                    />
+                  </div>
+                  <div className="naotext">
+                    {campoAberto && (
+                      <input
+                        type="text"
+                        placeholder="Digite aqui"
+                        style={{
+                          width:"200px",
+                          height:"10px 0"
+                        }}
+                      />
+                    )}
+                  </div>
                 </div>
                 <div
                     className="listinfo"
