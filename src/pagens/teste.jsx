@@ -7,6 +7,7 @@ import "../pagens/apto.css";
 function CollapsibleButton({ buttonText, hiddenText }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
+  const [activeItemIndex, setActiveItemIndex] = useState(0);
 
   const toggleCollapsible = () => {
     setIsCollapsed(!isCollapsed);
@@ -16,11 +17,17 @@ function CollapsibleButton({ buttonText, hiddenText }) {
     setShowTooltip(!showTooltip);
   };
 
+  const onMouseEnter = () => {
+    setShowTooltip(false)
+  }
+
   return (
     <div>
       <div
         className={`collapsible ${isCollapsed ? "active" : ""}`}
         onClick={toggleCollapsible}
+        onMouseEnter={()=>setActiveItemIndex(index)}
+        onMouseLeave={onMouseLeave}
       >
         {buttonText}
         <FaAngleDown />
@@ -43,7 +50,8 @@ function CollapsibleButton({ buttonText, hiddenText }) {
                     onMouseLeave={toggleTooltip}
                 >
                     <FaInfoCircle />
-                    {showTooltip && (
+                    {showTooltip && 
+                     activeItemIndex === index && (
                         <div className="tooltip">
                             Texto de aviso
                         </div>
