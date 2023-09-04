@@ -6,19 +6,20 @@ import "../pagens/apto.css";
 
 function CollapsibleButton({ buttonText, hiddenText }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [showTooltip, setShowTooltip] = useState(false);
+  // const [showTooltip, setShowTooltip] = useState(false);
   const [activeItemIndex, setActiveItemIndex] = useState(0);
 
   const toggleCollapsible = () => {
     setIsCollapsed(!isCollapsed);
   };
 
-  const toggleTooltip = () => {
-    setShowTooltip(!showTooltip);
-  };
+  // const toggleTooltip = () => {
+  //   setShowTooltip(!showTooltip);
+  // };
 
-  const onMouseEnter = () => {
-    setShowTooltip(false)
+  const onMouseEnter = (index) => {
+    setActiveItemIndex(index)
+    // setShowTooltip(false)
   }
 
   return (
@@ -26,8 +27,8 @@ function CollapsibleButton({ buttonText, hiddenText }) {
       <div
         className={`collapsible ${isCollapsed ? "active" : ""}`}
         onClick={toggleCollapsible}
-        onMouseEnter={()=>setActiveItemIndex(index)}
-        onMouseLeave={onMouseLeave}
+        // onMouseEnter={()=>onMouseEnter(activeItemIndex)}
+        // onMouseLeave={()=>onMouseEnter(activeItemIndex)}
       >
         {buttonText}
         <FaAngleDown />
@@ -46,12 +47,11 @@ function CollapsibleButton({ buttonText, hiddenText }) {
                 </div>
                 <div
                     className="listinfo"
-                    onMouseEnter={toggleTooltip}
-                    onMouseLeave={toggleTooltip}
+                    onMouseEnter={()=>onMouseEnter(index)}
+                    onMouseLeave={()=>onMouseEnter(index)}
                 >
                     <FaInfoCircle />
-                    {showTooltip && 
-                     activeItemIndex === index && (
+                    {activeItemIndex === index && (
                         <div className="tooltip">
                             Texto de aviso
                         </div>
