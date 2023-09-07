@@ -1,0 +1,41 @@
+.info {
+    /* background: red; */
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 10px; */
+    margin-top: 10px;
+}
+.aptos {
+    width: 100%;
+    height: 100px;
+    margin-top: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* background: yellowgreen; */
+}
+
+.aptosnum {
+    width: 70%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aptosnum span {
+    
+    margin: 5px;
+    border-radius: 3px;
+    padding: 10px;
+    background: gray;
+}
+.aptosnum span a {
+    text-decoration: none;
+    color:#fff;
+}

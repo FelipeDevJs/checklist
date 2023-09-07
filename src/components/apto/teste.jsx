@@ -1,8 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { FaAngleDown, FaInfoCircle } from "react-icons/fa";
-import ImgVitalle from "../assets/vitalle_pq.png.webp";
-import "../pagens/apto.css";
+// import "../apto.css";
 
 function CollapsibleButton({ buttonText, hiddenText }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -112,9 +111,6 @@ function AptoId() {
 
   return (
     <div>
-      <section className="logoobra">
-        <img src={ImgVitalle} alt="Logo Vitalle" />
-      </section>
       <section className="local">
         <h1>Bloco {id} - apto {aptoId}</h1>
       </section>

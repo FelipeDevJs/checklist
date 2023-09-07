@@ -1,8 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Home from './pagens/Home';
-import Bloco from './pagens/bloco';
-import Teste from './pagens/teste';
+import Home from './pages/Home';
+import Bloco from './components/bloco';
+import Teste from './components/apto/teste';
+import Apto101 from './components/apto/Apto101';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/bloco/:id' element={<Bloco />} />
-        <Route path='/bloco/:id/apto/:aptoId' element={<Teste />} />
+        <Route path='/bloco/:id/apto/101' element={<Apto101 />} />
       </Routes>
     </div>
   );
