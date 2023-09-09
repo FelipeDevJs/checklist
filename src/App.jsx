@@ -2,7 +2,6 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 import Bloco from './components/bloco';
-import Teste from './components/apto/teste';
 import Apto101 from './components/apto/Apto101';
 
 function App() {

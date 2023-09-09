@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import { FaAngleDown, FaFileImage } from "react-icons/fa";
 
-function Banheiro() {
+function Banheiro({onUpdateBanheiroData}) {
     const [isCollapsed, setIsCollapsed] = useState(false);
+    const [inputData, setInputData] = useState('')
+
+    const enviarDadosParaApto101 = () =>{
+        const dadosBanheiro = {
+            banheiro: inputData,
+        }
+        onUpdateBanheiroData(dadosBanheiro)
+    }
 
     const toggleCollapsible = () => {
         setIsCollapsed(!isCollapsed);
@@ -35,8 +43,14 @@ function Banheiro() {
                             </label>
                         </div>
                         <div className="text">
-                            <input type="text" placeholder="O que falta ?" />
+                            <input 
+                                type="text" 
+                                placeholder="O que falta ?" 
+                                value={inputData}
+                                onChange={(e)=>setInputData(e.target.value)}
+                            />
                         </div>
+                        <button onClick={enviarDadosParaApto101}>Enviar para cima</button>
                     </div>
                 </div>
             )}

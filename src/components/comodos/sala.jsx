@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import { FaAngleDown, FaFileImage } from "react-icons/fa";
 
-function Sala() {
+function Sala({onUpdateSalaData}) {
     const [isCollapsed, setIsCollapsed] = useState(false);
+    const [inputData, setInputData] = useState('')
+
+    const enviarDadosParaApto101 = () =>{
+        const dadosSala = {
+            Sala: inputData,
+        }
+        onUpdateSalaData(dadosSala)
+    }
 
     const toggleCollapsible = () => {
         setIsCollapsed(!isCollapsed);
@@ -35,8 +43,13 @@ function Sala() {
                             </label>
                         </div>
                         <div className="text">
-                            <input type="text" placeholder="O que falta ?" />
+                            <input 
+                                type="text" 
+                                placeholder="O que falta ?" 
+                                onChange={(e)=>setInputData(e.target.value)}
+                            />
                         </div>
+                        <button onClick={enviarDadosParaApto101}>Enviar para cima</button>
                     </div>
                 </div>
             )}
