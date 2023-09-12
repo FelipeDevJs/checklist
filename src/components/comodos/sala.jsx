@@ -65,8 +65,8 @@ function Sala(){
 
     return(
         <>
-            <div className="banheirocomodo">
-                <div className="banheirotitle">
+            <div className="comodo">
+                <div className="comodotitle">
                     <h3>SALA</h3>
                     <FaAngleDown
                         className={`icon collapsible ${isCollapsed ? "active" : ""}`}
@@ -79,18 +79,20 @@ function Sala(){
                     <> 
                         {/* map dos itens do sala */}
                         {itens.map((item)=>(
-                            <div key={item._id} className="salaitem">
+                            <div key={item._id} className="item">
                                 <div className="item_nome">
                                     {item.nome}
                                 </div>
                                 <div className="item_input">
-                                    <label>
+                                    <label className="container">
                                         Feito corretamente? Sim
                                         <input
+                                            className="check"
                                             type="checkbox"
                                             checked={item.marcado}
                                             onChange={() => handleCheckboxChange(item._id, item.marcado)}
                                         />
+                                        <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div className="naofeito">

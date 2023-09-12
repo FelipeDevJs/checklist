@@ -65,9 +65,9 @@ function Banheiro(){
 
     return(
         <>
-            <div className="banheirocomodo">
-                <p>Bloco {blocoid} apto {aptoid}</p>
-                <div className="banheirotitle">
+            <p className="info">Bloco {blocoid} apto {aptoid}</p>
+            <div className="comodo">
+                <div className="comodotitle">
                     <h3>BANHEIRO</h3>
                     <FaAngleDown
                         className={`icon collapsible ${isCollapsed ? "active" : ""}`}
@@ -80,18 +80,20 @@ function Banheiro(){
                     <> 
                         {/* map dos itens do banheiro */}
                         {itens.map((item)=>(
-                            <div key={item._id} className="banheiroitens">
+                            <div key={item._id} className="item">
                                 <div className="item_nome">
                                     {item.nome}
                                 </div>
                                 <div className="item_input">
-                                    <label>
-                                        Feito corretamente? Sim
+                                    <label className="container">
+                                        Feito corretamente? <span className="sim">Sim</span>
                                         <input
+                                            className="check"
                                             type="checkbox"
                                             checked={item.marcado}
                                             onChange={() => handleCheckboxChange(item._id, item.marcado)}
                                         />
+                                        <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div className="naofeito">
