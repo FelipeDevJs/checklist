@@ -9,6 +9,7 @@ function Sala(){
     const {blocoid, aptoid} = useParams()
 
     const url = 'https://chekclistback.onrender.com'
+    // const url = 'http://localhost:3001'
 
     const [itens, setItens] = useState([]);
     const [comentarios, setComentarios] = useState({});
@@ -85,7 +86,9 @@ function Sala(){
                                 </div>
                                 <div className="item_input">
                                     <label className="container">
-                                        Feito corretamente? Sim
+                                        Feito corretamente?
+                                       
+                                        <span className="sim">Sim</span>
                                         <input
                                             className="check"
                                             type="checkbox"
@@ -93,6 +96,7 @@ function Sala(){
                                             onChange={() => handleCheckboxChange(item._id, item.marcado)}
                                         />
                                         <span class="checkmark"></span>
+                                        
                                     </label>
                                 </div>
                                 <div className="naofeito">
