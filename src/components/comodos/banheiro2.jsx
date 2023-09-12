@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import './comodo.css'
 
-function Sala(){
+function Banheiro(){
 
     const {blocoid, aptoid} = useParams()
 
@@ -20,11 +20,11 @@ function Sala(){
 
     useEffect(()=>{
         async function fetchItens() {
-            const response = await axios.get('http://localhost:3001/itens/sala', {
+            const response = await axios.get('http://localhost:3001/itens/banheiro', {
                 params: {
                     id_bloco: blocoid,
                     id_apto: aptoid,
-                    comodo: 'sala'
+                    comodo: 'banheiro'
                 }
             });
             setItens(response.data);
@@ -41,7 +41,7 @@ function Sala(){
 
     //atualizar o checkbox
     const handleCheckboxChange = async (id, marcado) => {
-        await axios.put(`${url}/itens/sala/${id}`, {
+        await axios.put(`${url}/itens/banheiro/${id}`, {
         marcado: !marcado,
         });
         setIsChecked((prev)=>({ ...prev, [id]: !marcado}))
@@ -55,7 +55,7 @@ function Sala(){
     //atualizar comentario
     const handleSaveComment = async (id) => {
         try {
-        const response = await axios.put(`${url}/itens/sala/${id}`, {
+        const response = await axios.put(`${url}/itens/banheiro/${id}`, {
             marcado: itens.find((item) => item._id === id).marcado,
             comentario: comentarios[id] || "", // Certifique-se de que o campo seja nomeado "comentario"
         });
@@ -69,8 +69,9 @@ function Sala(){
     return(
         <>
             <div className="banheirocomodo">
+                <p>Bloco {blocoid} apto {aptoid}</p>
                 <div className="banheirotitle">
-                    <h3>SALA</h3>
+                    <h3>BANHEIRO</h3>
                     <FaAngleDown
                         className={`icon collapsible ${isCollapsed ? "active" : ""}`}
                         onClick={toggleCollapsible}
@@ -80,9 +81,9 @@ function Sala(){
                 
                 {isCollapsed && (
                     <> 
-                        {/* map dos itens do sala */}
+                        {/* map dos itens do banheiro */}
                         {itens.map((item)=>(
-                            <div key={item._id} className="salaitem">
+                            <div key={item._id} className="banheiroitens">
                                 <div className="item_nome">
                                     {item.nome}
                                 </div>
@@ -128,4 +129,4 @@ function Sala(){
 }
 
 
-export default Sala
+export default Banheiro

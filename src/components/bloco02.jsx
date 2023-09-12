@@ -13,13 +13,13 @@ function Bloco02(){
                 <div className='aptos'>
                     <div className="aptosnum">
                         <span>
-                            <Link to=''>201</Link>
+                            <Link to={`/bloco/${id}/apto/101`}>101</Link>
                         </span>
                         <span>
-                            <Link to=''>202</Link>
+                            <Link to={`/bloco/${id}/apto/102`}>102</Link>
                         </span>
                         <span>
-                            <Link to=''>203</Link>
+                            <Link to={`/bloco/${id}/apto/103`}>103</Link>
                         </span>
                     </div>
                 </div>

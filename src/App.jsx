@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 import Bloco from './components/bloco';
-import Apto101 from './components/apto/Apto101';
+import Apto from './components/apto/Apto';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/bloco/:id' element={<Bloco />} />
-        <Route path='/bloco/:id/apto/101' element={<Apto101 />} />
+        <Route path='/bloco/:blocoid/apto/:aptoid' element={<Apto />} />
       </Routes>
     </div>
   );
