@@ -8,7 +8,7 @@ function Banheiro(){
 
     const {blocoid, aptoid} = useParams()
 
-    const url = 'http://localhost:3001'
+    const url = 'https://chekclistback.onrender.com'
 
     const [itens, setItens] = useState([]);
     const [novoItem, setNovoItem] = useState('');
