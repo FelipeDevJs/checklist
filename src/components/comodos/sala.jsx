@@ -11,16 +11,13 @@ function Sala(){
     const url = 'https://chekclistback.onrender.com'
 
     const [itens, setItens] = useState([]);
-    const [novoItem, setNovoItem] = useState('');
     const [comentarios, setComentarios] = useState({});
     const [isCollapsed, setIsCollapsed] = useState(false)
-    const [itemEditando, setItemEditando] = useState(null);
-    const [ultimoComentario, setUltimoComentario] = useState('');
     const [isChecked, setIsChecked] = useState(false)
 
     useEffect(()=>{
         async function fetchItens() {
-            const response = await axios.get('http://localhost:3001/itens/sala', {
+            const response = await axios.get(`${url}/itens/sala`, {
                 params: {
                     id_bloco: blocoid,
                     id_apto: aptoid,
