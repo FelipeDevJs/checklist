@@ -5,7 +5,8 @@
 .main-box {
   width: 100%;
   height: 100%;
-
+  display: flex;
+  flex-direction: column;
   /* background: #c0c0c0; */
 }
 .logo{

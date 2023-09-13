@@ -20,31 +20,31 @@ function Login() {
     setSenha(e.target.value);
   };
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
+  // const handleLogin = async (e) => {
+  //   e.preventDefault();
 
-    const dados = {
-      nome: nome,
-      senha: senha,
-    };
+  //   const dados = {
+  //     nome: nome,
+  //     senha: senha,
+  //   };
 
-    try {
-      const resposta = await axios.post(`${url}/login`, dados);
-      console.log('Resposta do servidor:', resposta.data);
+  //   try {
+  //     const resposta = await axios.post(`${url}/login`, dados);
+  //     console.log('Resposta do servidor:', resposta.data);
 
-      if (resposta.status === 200) {
-        navigate('/dash'); // Use navigate function to redirect to /dash
-      }
-    } catch (erro) {
-      console.error('Erro ao fazer login:', erro);
-      setLoginSucesso(false);
-    }
-  };
+  //     if (resposta.status === 200) {
+  //       navigate('/dash'); // Use navigate function to redirect to /dash
+  //     }
+  //   } catch (erro) {
+  //     console.error('Erro ao fazer login:', erro);
+  //     setLoginSucesso(false);
+  //   }
+  // };
 
   return (
     <>
       <div className="main">
-        <form>
+        <form method='POST' action='http://localhost:3001/login'>
           <h4>Entrar no sistema</h4>
           <input
             type="text"
@@ -56,7 +56,7 @@ function Login() {
           />
           <input
             type="password"
-            name="pwd"
+            name="senha"
             className="pass"
             placeholder="Senha"
             value={senha}
@@ -64,7 +64,7 @@ function Login() {
           />
           <input
             type="submit"
-            onClick={handleLogin}
+            // onClick={handleLogin}
             value="Entrar"
           />
         </form>
