@@ -1,4 +1,4 @@
-import '../App.css'
+import './home.css'
 import { Link} from 'react-router-dom'
 
 import MainLogo from '../components/mainLogo'
@@ -7,7 +7,7 @@ function Home (){
     return(
       <>
 
-        <div className='main-box'>
+        <div className='main_bloco'>
           <div className="logo">
             <MainLogo />
           </div>

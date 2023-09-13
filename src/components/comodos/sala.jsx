@@ -8,8 +8,8 @@ function Sala(){
 
     const {blocoid, aptoid} = useParams()
 
-    // const url = 'https://chekclistback.onrender.com'
-    const url = 'http://localhost:3001'
+    const url = 'https://chekclistback.onrender.com'
+    // const url = 'http://localhost:3001'
 
     const [itens, setItens] = useState([]);
     const [comentarios, setComentarios] = useState({});

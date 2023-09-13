@@ -5,6 +5,8 @@
     flex-direction: column;
     width: 100%;
     /* background: red; */
+    position: absolute;
+    top: 0;
 }
 .questoes {
     width: 100%;

@@ -7,8 +7,9 @@ import './apto.css'
 function Apto101(){
     return(
         <>
-            <MainLogo />
+            
             <div className="comodos">
+                <MainLogo />
                 <Banheiro />
                 <Sala />
             </div>

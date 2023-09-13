@@ -8,8 +8,8 @@ function Bloco01(){
     const {id} = useParams()
     return(
         <>
-            <MainLogo />
-            <div className='main'>
+            <div className='main_bloco'>
+                <MainLogo />
                 <div className='info'>
                     <p>Bloco {id}</p>
                 </div>
