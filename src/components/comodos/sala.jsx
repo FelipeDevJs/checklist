@@ -8,8 +8,8 @@ function Sala(){
 
     const {blocoid, aptoid} = useParams()
 
-    const url = 'https://chekclistback.onrender.com'
-    // const url = 'http://localhost:3001'
+    const url = 'https://chekclistback.onrender.com/itens/'
+    // const url = 'http://localhost:3001/itens'
 
     const [itens, setItens] = useState([]);
     const [comentarios, setComentarios] = useState({});
@@ -18,7 +18,7 @@ function Sala(){
 
     useEffect(()=>{
         async function fetchItens() {
-            const response = await axios.get(`${url}/itens/sala`, {
+            const response = await axios.get(url, {
                 params: {
                     id_bloco: blocoid,
                     id_apto: aptoid,
