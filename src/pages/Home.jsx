@@ -20,11 +20,6 @@ function Home (){
             </nav>
           </section>
         </div>
-        <footer>
-          <Link to='/admin'>
-            <p>ADMIN</p>
-          </Link>
-        </footer>
       </>
     )
   }

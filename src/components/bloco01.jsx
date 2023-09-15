@@ -15,15 +15,15 @@ function Bloco01(){
                 </div>
                 <div className='aptos'>
                     <div className="aptosnum">
-                    <span>
+                        <span>
                             <Link to={`/bloco/${id}/apto/101`}>101</Link>
                         </span>
-                        <span>
+                        {/* <span>
                             <Link to={`/bloco/${id}/apto/102`}>102</Link>
                         </span>
                         <span>
                             <Link to={`/bloco/${id}/apto/103`}>103</Link>
-                        </span>
+                        </span> */}
                     </div>
                 </div>
             </div>
